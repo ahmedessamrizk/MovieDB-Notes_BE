@@ -27,6 +27,7 @@ export const appRouter = (app) => {
 
     //Invalid routing
     app.use('*', (req, res, next) => {
+        app.use(morgan("dev"))
         //res.status(404).json({ message: "Invalid Routing" })
         next(Error("404 Page not found In-valid Routing or method", { cause: 404 }))
       })
