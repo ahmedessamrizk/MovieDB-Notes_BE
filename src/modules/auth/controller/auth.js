@@ -1,6 +1,10 @@
 import dotenv from 'dotenv'
-dotenv.config({ path: ('./config/.env') })
-import { findById, findOne, findOneAndUpdate, updateOne } from '../../../../DB/DBMethods.js';
+import path from 'path'
+import { fileURLToPath } from 'url'
+const dirname = path.dirname(fileURLToPath(import.meta.url))
+dotenv.config({ path: path.join(dirname, './config/.env') })
+
+import { findById, findOne, findOneAndUpdate, updateOne } from '../../../../DB/DBmethods.js';
 import { userModel } from './../../../../DB/models/user.model.js';
 import { asyncHandler } from '../../../middleware/asyncHandler.js';
 import jwt from 'jsonwebtoken'
