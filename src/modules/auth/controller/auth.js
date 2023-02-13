@@ -1,4 +1,4 @@
-import { findOne, findOneAndUpdate, updateOne } from '../../../../DB/DBmethods.js'
+import { findOne, findOneAndUpdate, updateOne } from './../../../../DB/DBmethods.js'
 import { userModel } from './../../../../DB/models/user.model.js';
 import { asyncHandler } from '../../../middleware/asyncHandler.js';
 import jwt from 'jsonwebtoken'
