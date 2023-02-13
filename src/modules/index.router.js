@@ -26,7 +26,7 @@ export const appRouter = (app) => {
     app.use(`${baseURL}/note`, noteRouter);
 
     //Invalid routing
-    app.use('*', (req, res) => {
+    app.use('*', (req, res, next) => {
         //res.status(404).json({ message: "Invalid Routing" })
         next(Error("404 Page not found In-valid Routing or method", { cause: 404 }))
       })
