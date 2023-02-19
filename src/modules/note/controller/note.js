@@ -1,6 +1,6 @@
 import { asyncHandler } from './../../../middleware/asyncHandler.js';
 import { noteModel } from './../../../../DB/models/note.model.js';
-import { create, findById, find, deleteOne, findOne, updateOne } from './../../../../DB/DBmethods.js'
+import { create, findById, find, deleteOne, findOne, updateOne } from '../../../../DB/DBmethods.js'
 
 export const addNote = asyncHandler(
     async (req, res, next) => {
