@@ -62,7 +62,7 @@ export const SignIn = asyncHandler(
                 return next(new Error('Invalid Account or password', { cause: 401 }));
             } else {
                 if (user.confirmEmail) {
-                    const userData = { first_name: user.first_name, last_name: user.last_name, _id: user._id, movies: user.movies, tvShows: user.tvShows };
+                    const userData = { first_name: user.first_name, last_name: user.last_name, _id: user._id };
                     const token = jwt.sign({ user: userData, id: user._id }, process.env.EMAILTOKEN, { expiresIn: 60 * 60 * 24 })
                     return res.status(200).json({ message: "Done", token });
                 } else {
