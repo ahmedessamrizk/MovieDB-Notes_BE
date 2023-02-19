@@ -35,6 +35,8 @@ const userSchema = new Schema({
         default: null
     },
     confirmEmail:{type: Boolean, default: false},
+    movies: [{type: String, unique: true}],
+    tvShows: [{type: String}],
 }, {
     timestamps: true
 })

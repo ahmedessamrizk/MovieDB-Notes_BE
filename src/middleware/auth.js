@@ -17,7 +17,7 @@ export const auth = () => {
                     //res.status(400).json({ message: "Invalid payload data" });
                     return next(Error('Invalid payload data', { cause: 400 }))
                 } else {
-                    const user = await userModel.findById(decoded.user._id).select('userName role');
+                    const user = await userModel.findById(decoded.user._id).select('userName');
                     if (!user) {
                         //res.status(404).json({ message: "Invalid id" });
                         return next(Error('Invalid id', { cause: 404 }))

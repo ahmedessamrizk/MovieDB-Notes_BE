@@ -1,5 +1,6 @@
 import authRouter from './auth/auth.router.js'
 import noteRouter from './note/note.router.js'
+import userRouter from './user/user.router.js'
 import morgan from 'morgan'
 import cors from 'cors'
 import express from 'express'
@@ -24,9 +25,10 @@ export const appRouter = (app) => {
     //Api Setup
     app.use(`${baseURL}/auth`, authRouter);
     app.use(`${baseURL}/note`, noteRouter);
+    app.use(`${baseURL}/user`, userRouter);
 
     //Invalid routing
-    app.use('*', (req, res) => {
+    app.use('*', (req, res, next) => {
         //res.status(404).json({ message: "Invalid Routing" })
         next(Error("404 Page not found In-valid Routing or method", { cause: 404 }))
       })
