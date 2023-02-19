@@ -37,3 +37,9 @@ export const removeTvShow = asyncHandler(
         return res.status(200).json({ message: "Done", user });
     })
 
+export const getWishList = asyncHandler(
+    async (req, res, next) => {
+        const wishList = await findById({ model: userModel,  filter: {_id: req.user._id}, select: 'movies tvShows'});
+        return res.status(200).json({ message: "Done", wishList });
+    })
+
