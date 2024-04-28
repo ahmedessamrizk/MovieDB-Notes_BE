@@ -5,7 +5,7 @@ import { appRouter } from './src/modules/index.router.js';
 
 
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT || 4000
 
 appRouter(app);
 
